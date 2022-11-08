@@ -1,0 +1,134 @@
+[
+    {
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcUNmTaJ0GAbWlsX6hRNdQO7ly_8APtwpfaQ&usqp=CAU",
+      "title": "Diabetic Retinopathy",
+      "price":300,
+      "details": "Diabetic eye disease is a group of eye problems that can affect people with diabetes. These conditions include diabetic retinopathy, diabetic macular edema, cataracts, and glaucoma. Over time, diabetes can cause damage to your eyes that can lead to poor vision or even blindness.",
+      "reviews": [
+        {
+            "id": 1,
+            "name": "id labore ex et quam laborum",
+            "email": "Eliseo@gardner.biz",
+            "image":"https://randomuser.me/api/portraits/men/2.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        },
+        {
+            "id": 2,
+            "name": "id labore ex et quam laborum",
+            "email": "Elso@gmail.com",
+            "image":"https://randomuser.me/api/portraits/men/3.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        }
+      ]
+    },
+    {
+      "picture": "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322267/slit-lamp-exam.jpg?w=1575",
+      "title": "Slit Lamp Microscopy",
+      "price":350,
+      "details": "A slit lamp is an instrument consisting of a high-intensity light source that can be focused to shine a thin sheet of light into the eye. It is used in conjunction with a biomicroscope.",
+      "reviews": [
+        {
+            "id": 1,
+            "name": "id labore ex et quam laborum",
+            "email": "Eliseo@gardner.biz",
+            "image":"https://randomuser.me/api/portraits/men/4.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        },
+        {
+            "id": 2,
+            "name": "id labore ex et quam laborum",
+            "email": "Elso@gmail.com",
+            "image":"https://randomuser.me/api/portraits/men/5.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        }
+      ]
+    },
+    {
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaPFay8tKBtNkulz3_SKCE2HKQJrMcQq_V-g&usqp=CAU",
+      "title": "DCR Operation",
+      "price":200,
+      "details": "A DCR is a type of surgery that is used to treat blocked tear ducts in adults. It creates a new passageway between the tear duct sac and the nose, bypassing the blockage and allowing tears to drain normally again.",
+      "reviews": [
+        {
+            "id": 1,
+            "name": "id labore ex et quam laborum",
+            "email": "Eliseo@gardner.biz",
+            "image":"https://randomuser.me/api/portraits/men/6.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        },
+        {
+            "id": 2,
+            "name": "id labore ex et quam laborum",
+            "email": "Elso@gmail.com",
+            "image":"https://randomuser.me/api/portraits/men/7.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        }
+      ]
+    },
+    {
+      "picture": "https://pgheyemds.com/wp-content/uploads/2016/07/GLAUCOMA-diagram-768x452.jpg",
+      "title": "Glaucoma Evaluation",
+      "price":400,
+      "details": "The diagnosis of glaucoma is usually made clinically and requires a comprehensive eye examination, including slit lamp, applanation tonometry, gonioscopy and dilated stereoscopic evaluation of the optic disc and retina. Automated perimetry is obtained if glaucoma is suspected.",
+      "reviews": [
+        {
+            "id": 1,
+            "name": "id labore ex et quam laborum",
+            "email": "Eliseo@gardner.biz",
+            "image":"https://randomuser.me/api/portraits/men/8.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        },
+        {
+            "id": 2,
+            "name": "id labore ex et quam laborum",
+            "email": "Elso@gmail.com",
+            "image":"https://randomuser.me/api/portraits/men/9.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        }
+      ]
+    },
+    {
+      "picture": "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2272034.jpeg",
+      "title": "Oculoplastic Surgery",
+      "price":450,
+      "details": "Oculoplastic surgery, a specialized area of ophthalmology focused on the health of the eyelids, orbit, tear ducts and other structures around the eye, is often called oculofacial or ophthalmic plastic and reconstructive surgery.",
+      "reviews": [
+        {
+            "id": 1,
+            "name": "id labore ex et quam laborum",
+            "email": "Eliseo@gardner.biz",
+            "image":"https://randomuser.me/api/portraits/men/10.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        },
+        {
+            "id": 2,
+            "name": "id labore ex et quam laborum",
+            "email": "Elso@gmail.com",
+            "image":"https://randomuser.me/api/portraits/men/11.jpg",
+            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+        }
+      ]
+    },
+    {
+        "picture": "https://jirehdesign.com/wp-content/uploads/2015/12/SUVR0089-510x610.jpg",
+        "title": "Anti-VEGF Therapy",
+        "price":500,
+        "details": "Anti-VEGF treatments are a group of medicines which reduce new blood vessel growth (neovascularisation) or oedema (swelling). Anti-VEGF medicines can be used to treat a number of eye conditions that cause new blood vessel growth or swelling under the macular area of your retina, the lining of the back of the eye.",
+        "reviews": [
+          {
+              "id": 1,
+              "name": "id labore ex et quam laborum",
+              "email": "Eliseo@gardner.biz",
+              "image":"https://randomuser.me/api/portraits/men/12.jpg",
+              "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+          },
+          {
+              "id": 2,
+              "name": "id labore ex et quam laborum",
+              "email": "Elso@gmail.com",
+              "image":"https://randomuser.me/api/portraits/men/13.jpg",
+              "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+          }
+        ]
+      }
+  ]
