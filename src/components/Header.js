@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import About from "./About";
 import ServiceCard from "./ServiceCard";
 // import Navbar from "./Navbar";
 
@@ -27,6 +28,12 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <div>
+        <p className="text-center text-3xl text-orange-500 font-bold py-6">
+          About
+        </p>
+      </div>
+      <About></About>
       <div>
         <p className="text-center text-3xl text-orange-500 font-bold pt-6">
           Services
