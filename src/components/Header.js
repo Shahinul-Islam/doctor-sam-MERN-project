@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ServiceCard from "./ServiceCard";
 // import Navbar from "./Navbar";
 
 const Header = () => {
@@ -9,7 +11,7 @@ const Header = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div>
+    <div className="mx-auto text-center">
       <div
         className="hero h-96"
         style={{
@@ -26,10 +28,19 @@ const Header = () => {
         </div>
       </div>
       <div>
+        <p className="text-center text-3xl text-orange-500 font-bold pt-6">
+          Services
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8 mx-auto my-20 justify-items-center shadow-slate-500">
         {services.map((service) => (
-          <p key={service._id}>{service.title}</p>
+          <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
+      <Link className="" to="/services">
+        <button className="my-4 btn mx-auto btn-small">View All</button>
+      </Link>
     </div>
   );
 };
