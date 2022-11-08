@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import About from "./About";
+import ConsultingHour from "./ConsultingHour";
 import ServiceCard from "./ServiceCard";
 // import Navbar from "./Navbar";
 
@@ -48,6 +49,7 @@ const Header = () => {
       <Link className="" to="/services">
         <button className="my-4 btn mx-auto btn-small">View All</button>
       </Link>
+      <ConsultingHour></ConsultingHour>
     </div>
   );
 };
