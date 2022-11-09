@@ -55,7 +55,9 @@ const SignUP = () => {
                 <div className="text-left"></div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Sign Up</button>
+                <button type="submit" className="btn btn-primary">
+                  Sign Up
+                </button>
               </div>
             </form>
             <div className="text-center flex justify-around mb-4">

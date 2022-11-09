@@ -3,6 +3,9 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
+  };
   return (
     <div>
       <div className="hero bg-base-200">
@@ -11,7 +14,7 @@ const Login = () => {
             <h1 className="text-3xl font-bold">Login now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -46,7 +49,9 @@ const Login = () => {
                 <div className="text-left"></div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">
+                  Login
+                </button>
               </div>
             </form>
             <div className="text-center flex justify-around mb-4">
