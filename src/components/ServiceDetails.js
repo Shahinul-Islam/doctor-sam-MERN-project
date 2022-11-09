@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ServiceDetails = () => {
   const location = useLocation();
   const id = location.state;
   const [service, setService] = useState([]);
   console.log(service);
+
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
@@ -39,32 +40,40 @@ const ServiceDetails = () => {
             </h2>
             <div>
               <p>
-                {service.reviews.map((review) => (
-                  <div>
-                    <div className="overflow-x-auto w-4/5 mx-auto my-8">
-                      <table className="table w-4/5">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                  <div className="mask mask-squircle w-12 h-12">
-                                    <img src={review.image} alt="reviewer" />
+                {service.reviews &&
+                  service.reviews.map((review) => (
+                    <div>
+                      <div className="overflow-x-auto w-4/5 mx-auto my-8">
+                        <table className="table w-4/5">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div className="flex items-center space-x-3">
+                                  <div className="avatar">
+                                    <div className="mask mask-squircle w-12 h-12">
+                                      <img src={review.image} alt="reviewer" />
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <div className="font-bold">
+                                      {review.name}
+                                    </div>
                                   </div>
                                 </div>
-                                <div>
-                                  <div className="font-bold">{review.name}</div>
-                                </div>
-                              </div>
-                            </td>
-                            <td className="w-4/5">Review: {review.body}</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                              </td>
+                              <td className="w-4/5 overflow-x-scroll">
+                                Review: {review.body}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </p>
+            </div>
+            <div className="text-center">
+              <Link className="btn btn-accent my-4">Add Review</Link>
             </div>
           </div>
         </div>

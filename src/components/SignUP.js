@@ -59,7 +59,7 @@ const SignUP = () => {
               </div>
             </form>
             <div className="text-center flex justify-around mb-4">
-              <Link className="flex items-baseline btn items-center">
+              <Link className="flex items-baseline btn">
                 Sign UP with{" "}
                 <FcGoogle className="mx-auto inline ml-2 pt-2 text-2xl" />
               </Link>
