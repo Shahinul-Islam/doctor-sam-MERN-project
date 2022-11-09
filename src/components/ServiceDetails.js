@@ -41,7 +41,7 @@ const ServiceDetails = () => {
               <p>
                 {service.reviews.map((review) => (
                   <div>
-                    <div className="overflow-x-auto w-4/5 mx-auto">
+                    <div className="overflow-x-auto w-4/5 mx-auto my-8">
                       <table className="table w-4/5">
                         <tbody>
                           <tr>
