@@ -42,7 +42,7 @@ const ServiceDetails = () => {
               <p>
                 {service.reviews &&
                   service.reviews.map((review) => (
-                    <div>
+                    <div key={review.id}>
                       <div className="overflow-x-auto w-4/5 mx-auto my-8">
                         <table className="table w-4/5">
                           <tbody>

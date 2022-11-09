@@ -21,7 +21,10 @@ const Services = () => {
       <div className="grid md:grid-cols-3 gap-8 mx-auto my-20 justify-items-center shadow-slate-500">
         {allServices &&
           allServices.map((signleService) => (
-            <div className="card w-96 bg-base-100 shadow-xl h-4/5">
+            <div
+              key={signleService._id}
+              className="card w-96 bg-base-100 shadow-xl h-4/5"
+            >
               <figure className="px-10 pt-10 cursor-pointer">
                 <PhotoProvider>
                   <PhotoView src={signleService.picture}>

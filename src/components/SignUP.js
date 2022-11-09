@@ -1,8 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const SignUP = () => {
+  // const { createUser } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const imgURL = form.imageURL.value;
+    // console.log(name, email, password, imgURL);
+    // createUser(email, password);
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div>
       <div className="hero bg-base-200">
@@ -11,7 +34,7 @@ const SignUP = () => {
             <h1 className="text-3xl font-bold">Sign Up now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleSignUp} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Full Name</span>
