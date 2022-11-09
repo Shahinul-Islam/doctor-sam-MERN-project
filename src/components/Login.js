@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, signWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
@@ -15,6 +15,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/");
+      })
+      .catch((err) => console.error(err));
+  };
+  const handleGoogleSignIn = () => {
+    signWithGoogle()
+      .then((result) => {
+        console.log(result.user);
         navigate("/");
       })
       .catch((err) => console.error(err));
@@ -68,7 +76,10 @@ const Login = () => {
               </div>
             </form>
             <div className="text-center flex justify-around mb-4">
-              <Link className="flex items-baseline btn">
+              <Link
+                onClick={handleGoogleSignIn}
+                className="flex items-baseline btn"
+              >
                 Login with{" "}
                 <FcGoogle className="mx-auto inline ml-2 pt-2 text-2xl" />
               </Link>

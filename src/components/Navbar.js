@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { signOutUser, user } = useContext(AuthContext);
+  console.log(user);
+  const handleLogOut = () => {
+    signOutUser()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -32,12 +44,28 @@ const Navbar = () => {
             <li>
               <Link>Blogs</Link>
             </li>
-            <li>
-              <Link to="/sign-up">Sign Up</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link to="/my-reviews">My Reviews</Link>
+                </li>
+                <li>
+                  <Link to="/add-service">Add Service</Link>
+                </li>
+                <li onClick={handleLogOut}>
+                  <Link>Logout</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/sign-up">Sign Up</Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -52,12 +80,38 @@ const Navbar = () => {
           <li>
             <Link>Blogs</Link>
           </li>
+          {user ? (
+            <>
+              <li>
+                <Link to="/my-reviews">My Reviews</Link>
+              </li>
+              <li>
+                <Link to="/add-service">Add Service</Link>
+              </li>
+              <li onClick={handleLogOut}>
+                <Link>Logout</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/sign-up">Sign Up</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </>
+          )}
+          {/*           
           <li>
             <Link to="/sign-up">Sign Up</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
           </li>
+          <li onClick={handleLogOut}>
+            <Link>Logout</Link>
+          </li> */}
         </ul>
       </div>
       {/* <div className="navbar-end">

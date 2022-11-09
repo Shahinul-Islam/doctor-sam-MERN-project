@@ -5,7 +5,7 @@ import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const SignUP = () => {
   // const { createUser } = useContext(AuthContext);
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -26,6 +26,16 @@ const SignUP = () => {
         console.error(err);
       });
   };
+
+  const handleGoogleSignIn = () => {
+    signWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div>
       <div className="hero bg-base-200">
@@ -96,7 +106,10 @@ const SignUP = () => {
               </div>
             </form>
             <div className="text-center flex justify-around mb-4">
-              <Link className="flex items-baseline btn">
+              <Link
+                onClick={handleGoogleSignIn}
+                className="flex items-baseline btn"
+              >
                 Sign UP with{" "}
                 <FcGoogle className="mx-auto inline ml-2 pt-2 text-2xl" />
               </Link>
