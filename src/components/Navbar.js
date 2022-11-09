@@ -42,7 +42,7 @@ const Navbar = () => {
               <Link>Services</Link>
             </li>
             <li>
-              <Link>Blogs</Link>
+              <Link to="/blogs">Blogs</Link>
             </li>
             {user ? (
               <>
@@ -64,6 +64,12 @@ const Navbar = () => {
                 <li>
                   <Link to="/login">Login</Link>
                 </li>
+                <li>
+                  <Link to="/add-service">Add Service</Link>
+                </li>
+                <li>
+                  <Link to="/my-reviews">My Reviews</Link>
+                </li>
               </>
             )}
           </ul>
@@ -78,7 +84,7 @@ const Navbar = () => {
             <Link to="/services">Services</Link>
           </li>
           <li>
-            <Link>Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
           </li>
           {user ? (
             <>
@@ -99,6 +105,12 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/add-service">Add Service</Link>
+              </li>
+              <li>
+                <Link to="/my-reviews">My Reviews</Link>
               </li>
             </>
           )}
