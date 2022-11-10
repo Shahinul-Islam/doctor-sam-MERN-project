@@ -6,7 +6,7 @@ const MyReviews = () => {
   const [reviews, setReviews] = useState([]);
   // console.log(reviews);
   /* useEffect(() => {
-    fetch("http://localhost:5000/servicesAll")
+    fetch("https://doctor-sam-server.vercel.app/servicesAll")
       .then((res) => res.json())
       .then((data) => setReviews(data.map((singleData) => singleData.reviews)))
       .catch((err) => console.error(err));

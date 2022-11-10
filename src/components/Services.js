@@ -6,14 +6,15 @@ import useTitle from "../hooks/useTitle";
 
 const Services = () => {
   useTitle("Services");
-  //   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [allServices, setAllServices] = useState();
   console.log(allServices);
   useEffect(() => {
-    fetch("http://localhost:5000/servicesAll")
+    setLoading(true);
+    fetch("https://doctor-sam-server.vercel.app/servicesAll")
       .then((res) => res.json())
       .then((data) => setAllServices(data));
-    // setLoading(false);
+    setLoading(false);
   }, []);
   return (
     <div>

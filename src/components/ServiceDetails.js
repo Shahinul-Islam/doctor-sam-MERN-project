@@ -12,7 +12,7 @@ const ServiceDetails = () => {
   console.log(user);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/servicesAll/${id}`)
+    fetch(`https://doctor-sam-server.vercel.app/servicesAll/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [id]);
@@ -29,7 +29,7 @@ const ServiceDetails = () => {
     const serviceId = location.state;
     console.log(body, name, email, image, id, serviceId);
     const userReviewData = { id, name, email, image, body, serviceId };
-    fetch(`http://localhost:5000/servicesAll/${serviceId}`, {
+    fetch(`https://doctor-sam-server.vercel.app/servicesAll/${serviceId}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
