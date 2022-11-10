@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddService = () => {
+  const notify = () => toast("Wow, Successfully Added!");
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,12 +25,16 @@ const AddService = () => {
       .then((data) => console.log(data))
       .catch((err) => console.error(err));
     form.reset();
+    notify();
   };
   return (
     <div>
       <p className="text-center text-3xl text-orange-500 font-bold pt-6 my-8">
         Add Service
       </p>
+      <div className="flex justify-center align-middle">
+        <ToastContainer />
+      </div>
       <form onSubmit={handleAddService} className="card-body">
         <div className="form-control">
           <label className="label">
