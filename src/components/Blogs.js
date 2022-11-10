@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../hooks/useTitle";
 
 const Blogs = () => {
+  useTitle("Blogs");
   return (
     <div className="grid md:grid-cols-3 gap-4 my-8">
       <div className="card bg-base-100 shadow-xl">

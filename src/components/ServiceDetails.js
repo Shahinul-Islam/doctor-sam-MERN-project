@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
+import useTitle from "../hooks/useTitle";
 
 const ServiceDetails = () => {
+  useTitle("Service Details");
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const id = location.state;

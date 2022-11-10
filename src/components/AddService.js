@@ -2,8 +2,10 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../hooks/useTitle";
 
 const AddService = () => {
+  useTitle("Add Service");
   const notify = () => toast("Wow, Successfully Added!");
   const handleAddService = (event) => {
     event.preventDefault();

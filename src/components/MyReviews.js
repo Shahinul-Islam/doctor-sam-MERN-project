@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import useTitle from "../hooks/useTitle";
 
 const MyReviews = () => {
+  useTitle("My Reviews");
   const [reviews, setReviews] = useState([]);
   // console.log(reviews);
   /* useEffect(() => {
