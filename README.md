@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# `Getting Started with Doctor Sam react spa project`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is made with tailwind, daisy ui, react, firebase, express js and mongodb and [visit this site](https://doctor-sam-ecfd3.web.app/).
+
+## This project is about:
+
+- we fetched data from an API from mongo DB
+- data contains services and you can add services as well
+- we make them show in the UI
+- used firebase authentication for verified user login
+- CRUD operation using node js
+- used express js for backend
+- used private route option for special page
 
 ## Available Scripts
 
