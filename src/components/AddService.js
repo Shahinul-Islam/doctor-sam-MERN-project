@@ -33,7 +33,7 @@ const AddService = () => {
         Add Service
       </p>
       <div className="flex justify-center align-middle">
-        <ToastContainer />
+        <ToastContainer position="top-center" />
       </div>
       <form onSubmit={handleAddService} className="card-body">
         <div className="form-control">
