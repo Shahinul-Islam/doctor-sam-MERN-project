@@ -2,12 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AddService = () => {
+  const handleAddService = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const title = form.title.value;
+    const price = form.price.value;
+    const details = form.details.value;
+    const picture = form.imageUrl.value;
+    const reviews = [];
+    const newService = { title, price, details, picture, reviews };
+    fetch(`http://localhost:5000/services/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newService),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
+    form.reset();
+  };
   return (
     <div>
       <p className="text-center text-3xl text-orange-500 font-bold pt-6 my-8">
         Add Service
       </p>
-      <form className="card-body">
+      <form onSubmit={handleAddService} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Title</span>
@@ -29,7 +50,6 @@ const AddService = () => {
             placeholder="image link"
             className="input input-bordered"
             name="imageUrl"
-            required
           />
         </div>
         <div className="form-control">
