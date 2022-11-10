@@ -1,17 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const ServiceDetails = () => {
+  const { user } = useContext(AuthContext);
   const location = useLocation();
   const id = location.state;
   const [service, setService] = useState([]);
-  console.log(service);
+  console.log(user);
 
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [id]);
+
+  //handle add reviews
+  const handleAddReview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const body = form.userReview.value;
+    const name = user.displayName;
+    const email = user.email;
+    const image = user.photoURL;
+    const id = user.uid;
+    const serviceId = location.state;
+    console.log(body, name, email, image, id, serviceId);
+    const userReviewData = { id, name, email, image, body, serviceId };
+    fetch(`http://localhost:5000/services/${serviceId}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userReviewData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
+    form.reset();
+  };
   return (
     <div>
       <h2 className="text-center font-bold text-3xl text-orange-500 my-4">
@@ -72,9 +99,35 @@ const ServiceDetails = () => {
                   ))}
               </p>
             </div>
-            <div className="text-center">
-              <Link className="btn btn-accent my-4">Add Review</Link>
-            </div>
+            {user && user ? (
+              <>
+                <form onSubmit={handleAddReview} className="card-body">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Comment</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="comment"
+                      className="input input-bordered"
+                      name="userReview"
+                    />
+                  </div>
+
+                  <div className="form-control mt-6">
+                    <button type="submit" className="btn btn-primary">
+                      comment
+                    </button>
+                  </div>
+                </form>
+              </>
+            ) : (
+              <div className="text-center my-4">
+                <Link className="btn btn-accent" to="/login">
+                  Please Login to Add Review
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       )}

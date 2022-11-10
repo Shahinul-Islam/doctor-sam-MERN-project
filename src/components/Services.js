@@ -39,7 +39,7 @@ const Services = () => {
               <div className="card-body items-center text-center">
                 <h2 className="card-title p-0">{signleService.title}</h2>
                 <p>
-                  {signleService.details.length > 100
+                  {signleService?.details?.length > 100
                     ? signleService.details.slice(0, 100) + "..."
                     : signleService.details}
                 </p>
