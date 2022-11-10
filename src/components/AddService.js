@@ -11,7 +11,7 @@ const AddService = () => {
     const picture = form.imageUrl.value;
     const reviews = [];
     const newService = { title, price, details, picture, reviews };
-    fetch(`http://localhost:5000/services/`, {
+    fetch(`http://localhost:5000/servicesAll/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -10,7 +10,7 @@ const ServiceDetails = () => {
   console.log(user);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`http://localhost:5000/servicesAll/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [id]);
@@ -27,7 +27,7 @@ const ServiceDetails = () => {
     const serviceId = location.state;
     console.log(body, name, email, image, id, serviceId);
     const userReviewData = { id, name, email, image, body, serviceId };
-    fetch(`http://localhost:5000/services/${serviceId}`, {
+    fetch(`http://localhost:5000/servicesAll/${serviceId}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
