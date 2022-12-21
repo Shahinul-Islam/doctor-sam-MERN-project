@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
@@ -7,6 +7,7 @@ import useTitle from "../hooks/useTitle";
 const Login = () => {
   useTitle("login");
   const { signInUser, signWithGoogle } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,7 +20,17 @@ const Login = () => {
         console.log(user);
         navigate("/");
       })
-      .catch((err) => console.error(err));
+      .catch((error) => {
+        console.log(error.message);
+        setErrorMessage(
+          error.message
+            .split("(")[1]
+            .split("/")[1]
+            .split(")")[0]
+            .split("-")
+            .join(" ")
+        );
+      });
   };
   const handleGoogleSignIn = () => {
     signWithGoogle()
@@ -69,7 +80,9 @@ const Login = () => {
                     Don't have any account? Please Sign Up
                   </Link>
                 </label>
-                <div className="text-left"></div>
+                <div className="text-center text-red-700 uppercase font-bold">
+                  <p>{errorMessage}</p>
+                </div>
               </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">

@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 import useTitle from "../hooks/useTitle";
+import { useState } from "react";
 
 const SignUP = () => {
   useTitle("signup");
   // const { createUser } = useContext(AuthContext);
   const { createUser, signWithGoogle } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -24,8 +26,15 @@ const SignUP = () => {
         console.log(user);
         navigate("/");
       })
-      .catch((err) => {
-        console.error(err);
+      .catch((error) => {
+        setErrorMessage(
+          error.message
+            .split("(")[1]
+            .split("/")[1]
+            .split(")")[0]
+            .split("-")
+            .join(" ")
+        );
       });
   };
 
@@ -99,7 +108,9 @@ const SignUP = () => {
                     Already have an account? Please Login
                   </Link>
                 </label>
-                <div className="text-left"></div>
+                <div className="text-center text-red-700 uppercase font-bold">
+                  <p>{errorMessage}</p>
+                </div>
               </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
